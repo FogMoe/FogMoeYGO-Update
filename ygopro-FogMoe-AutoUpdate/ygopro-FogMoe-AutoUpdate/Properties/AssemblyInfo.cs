@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("ygopro-FogMoe-AutoUpdate")]
+[assembly: AssemblyTitle("FogMoe YGOPro服务器数据更新工具")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ygopro-FogMoe-AutoUpdate")]
-[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyProduct("FogMoe YGOPro服务器数据更新工具")]
+[assembly: AssemblyCopyright("kc@fog.moe")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
