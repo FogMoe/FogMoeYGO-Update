@@ -1,0 +1,11 @@
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\bin\Release\ygopro-FogMoe-AutoUpdate.exe.config
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\bin\Release\ygopro-FogMoe-AutoUpdate.exe
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\bin\Release\ygopro-FogMoe-AutoUpdate.pdb
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro-FogMoe-AutoUpdate.csproj.AssemblyReference.cache
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro-FogMoe-AutoUpdate.csproj.SuggestedBindingRedirects.cache
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro_FogMoe_AutoUpdate.Form1.resources
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro_FogMoe_AutoUpdate.Properties.Resources.resources
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro-FogMoe-AutoUpdate.csproj.GenerateResource.cache
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro-FogMoe-AutoUpdate.csproj.CoreCompileInputs.cache
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro-FogMoe-AutoUpdate.exe
+E:\GitHub\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\ygopro-FogMoe-AutoUpdate\obj\Release\ygopro-FogMoe-AutoUpdate.pdb
