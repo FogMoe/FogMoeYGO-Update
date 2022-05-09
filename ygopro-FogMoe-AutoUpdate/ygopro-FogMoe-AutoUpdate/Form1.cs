@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -14,6 +15,7 @@ namespace ygopro_FogMoe_AutoUpdate
 {
     public partial class Form1 : Form
     {
+        int needUpdateCard = 0; //0是未检查，1是有更新，2是无更新
         string downloadNode;
         string nodeUrl;
         public string gameFolderPath;
@@ -35,13 +37,13 @@ namespace ygopro_FogMoe_AutoUpdate
                 }
                 else
                 {
-                    MessageBox.Show("网络连接失败啦！");
+                    MessageBox.Show("网络连接失败啦！请联系Kc处理喵~ ");
                     Close();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("网络连接失败啦！");
+                MessageBox.Show("网络连接失败啦！请联系Kc处理喵~ ");
                 Application.Exit();
             }
             comboBox1.SelectedItem = comboBox1.Items[1];
@@ -103,35 +105,33 @@ namespace ygopro_FogMoe_AutoUpdate
             {
                 nodeUrl = "https://archive.fastgit.org/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
             }
-            if (true)
+            if (needUpdateCard == 1)
             {
-                label2.Text = "当前状态: 运行中";
-                /*try
+                label2.Text = "当前状态: 更新中";
+                try
                 {
-                    CoreClass.DownloadFile(nodeUrl, gameFolderPath + "\\expansions");
-                    CoreClass.Unzip(gameFolderPath + "\\expansions\\ygopro-FogMoe-card-database-main.zip");
-                    CoreClass.DeleteFile(gameFolderPath + "\\expansions\\ygopro-FogMoe-card-database-main.zip");
+                    CoreClass.DownloadFile(nodeUrl, gameFolderPath);
+                    CoreClass.Unzip(gameFolderPath);
+                    CoreClass.DeleteFile(gameFolderPath + "\\FogMoe-Temp-YGO.zip");
+                    CoreClass.CopyFilesRecursively(gameFolderPath + "\\ygopro-FogMoe-card-database-main", gameFolderPath + "\\expansions");
                     label2.Text = "当前状态: 完成了";
                     MessageBox.Show("更新完成啦！");
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("发生错误了: 无法更新！");
+                    MessageBox.Show("发生错误了: 无法更新！请联系Kc处理喵~ ");
                     label2.Text = "当前状态: 失败了";
-                }*/
-                ////////////////////
-                    CoreClass.DownloadFile(nodeUrl, gameFolderPath + "\\expansions");
-                    CoreClass.Unzip(gameFolderPath + "\\expansions\\FogMoe-Temp-YGO.zip");
-                    CoreClass.DeleteFile(gameFolderPath + "\\expansions\\FogMoe-Temp-YGO.zip");
-                    label2.Text = "当前状态: 完成了";
-                    MessageBox.Show("更新完成啦！");
-
-
-
-                    MessageBox.Show("发生错误了: 无法更新！");
-                    label2.Text = "当前状态: 失败了";
-                ////////////////////
+                }               
             }
+            else if (needUpdateCard == 0)
+            {
+                MessageBox.Show("请先点击检查版本更新哦！");
+            }
+            else if (needUpdateCard == 2)
+            {
+                MessageBox.Show("您的本地FogMoe卡片数据版本已经是最新的了，不需要更新哦！");
+            }
+                
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -152,6 +152,53 @@ namespace ygopro_FogMoe_AutoUpdate
         private void label4_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://jq.qq.com/?_wv=1027&k=tbRrClio");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("请先选择YGOPro目录路径文件夹！");
+            }
+            else
+            {
+                try
+                {
+                    label2.Text = "当前状态: 检查中";
+                    string localDataVersion = "[没有发现FogMoe卡片数据本地版本文件，您可能是第一次使用呢，请点击更新卡片数据！]";
+                    if (File.Exists(gameFolderPath + "\\expansions\\Version.txt"))
+                    {
+                        localDataVersion = CoreClass.ReadTextFromFile(gameFolderPath + "\\expansions\\Version.txt");
+                    }
+                    else
+                    {
+                        localDataVersion = "[没有发现FogMoe卡片数据本地版本文件，您可能是第一次使用呢，请点击更新卡片数据！]";
+                    }
+                    string cardDataVersion = CoreClass.ReadTextFromUrl("https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt");
+                    MessageBox.Show("FogMoe卡片数据最新版本是: " + cardDataVersion + " ,本地版本是: " + localDataVersion);
+                    if (localDataVersion == cardDataVersion)
+                    {
+                        label2.Text = "当前状态: 已最新";
+                        needUpdateCard = 2;
+                    }
+                    else
+                    {
+                        label2.Text = "当前状态: 需更新";
+                        needUpdateCard = 1;
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("发生错误了: 无法检查！请联系Kc处理喵~ ");
+                    label2.Text = "当前状态: 失败了";
+                    needUpdateCard = 0;
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     //This program is made by Kc [https://github.com/scarletkc]
