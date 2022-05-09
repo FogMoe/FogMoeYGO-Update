@@ -1,1 +1,0 @@
-# ygopro-FogMoe-card-data
