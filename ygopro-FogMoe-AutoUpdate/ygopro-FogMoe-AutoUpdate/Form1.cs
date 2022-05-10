@@ -18,6 +18,7 @@ namespace ygopro_FogMoe_AutoUpdate
         int needUpdateCard = 0; //0是未检查，1是有更新，2是无更新
         string downloadNode;
         string nodeUrl;
+        string checkUpdateUrl;
         public string gameFolderPath;
         public Form1()
         {
@@ -46,7 +47,7 @@ namespace ygopro_FogMoe_AutoUpdate
                 MessageBox.Show("网络连接失败啦！请联系Kc处理喵~ ");
                 Application.Exit();
             }
-            comboBox1.SelectedItem = comboBox1.Items[1];
+            comboBox1.SelectedItem = comboBox1.Items[0];
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace ygopro_FogMoe_AutoUpdate
                 if (responseString == "False")
                 {
                     Visible = false;
-                    MessageBox.Show("当前更新器" + thisVersion + "，有新版本可以使用！");
+                    MessageBox.Show("当前更新器" + thisVersion + "，有新版本可以使用，请下载！");
                     System.Diagnostics.Process.Start("https://diy.fog.moe");
                     Close();
                 }
@@ -93,17 +94,21 @@ namespace ygopro_FogMoe_AutoUpdate
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label5.Visible = true;
             if (downloadNode == "国内")
             {
                 nodeUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt";
             }
             else if(downloadNode == "国外")
             {
                 nodeUrl = "https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://github.com/scarletkc/ygopro-FogMoe-card-database/raw/main/Version.txt";
             }
             else
             {
                 nodeUrl = "https://archive.fastgit.org/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://hk1.monika.love/scarletkc/ygopro-FogMoe-card-database/main/Version.txt";
             }
             if (needUpdateCard == 1)
             {
@@ -119,7 +124,7 @@ namespace ygopro_FogMoe_AutoUpdate
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("发生错误了: 无法更新！请联系Kc处理喵~ ");
+                    MessageBox.Show("发生错误了: 无法更新！请更换下载节点重试或联系Kc处理喵~ ");
                     label2.Text = "当前状态: 失败了";
                 }               
             }
@@ -131,7 +136,8 @@ namespace ygopro_FogMoe_AutoUpdate
             {
                 MessageBox.Show("您的本地FogMoe卡片数据版本已经是最新的了，不需要更新哦！");
             }
-                
+            label5.Visible = false;
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -156,6 +162,22 @@ namespace ygopro_FogMoe_AutoUpdate
 
         private void button4_Click(object sender, EventArgs e)
         {
+            label5.Visible = true;
+            if (downloadNode == "国内")
+            {
+                nodeUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt";
+            }
+            else if (downloadNode == "国外")
+            {
+                nodeUrl = "https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://github.com/scarletkc/ygopro-FogMoe-card-database/raw/main/Version.txt";
+            }
+            else
+            {
+                nodeUrl = "https://archive.fastgit.org/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://hk1.monika.love/scarletkc/ygopro-FogMoe-card-database/main/Version.txt";
+            }
             if (textBox1.Text == "")
             {
                 MessageBox.Show("请先选择YGOPro目录路径文件夹！");
@@ -174,7 +196,7 @@ namespace ygopro_FogMoe_AutoUpdate
                     {
                         localDataVersion = "[没有发现FogMoe卡片数据本地版本文件，您可能是第一次使用呢，请点击更新卡片数据！]";
                     }
-                    string cardDataVersion = CoreClass.ReadTextFromUrl("https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt");
+                    string cardDataVersion = CoreClass.ReadTextFromUrl(checkUpdateUrl);
                     MessageBox.Show("FogMoe卡片数据最新版本是: " + cardDataVersion + " ,本地版本是: " + localDataVersion);
                     if (localDataVersion == cardDataVersion)
                     {
@@ -189,14 +211,20 @@ namespace ygopro_FogMoe_AutoUpdate
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("发生错误了: 无法检查！请联系Kc处理喵~ ");
+                    MessageBox.Show("发生错误了: 无法检查！请更换下载节点重试或联系Kc处理喵~ ");
                     label2.Text = "当前状态: 失败了";
                     needUpdateCard = 0;
                 }
             }
+            label5.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
         {
 
         }
