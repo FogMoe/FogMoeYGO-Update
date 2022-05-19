@@ -94,11 +94,10 @@ namespace ygopro_FogMoe_AutoUpdate
 
         private void button2_Click(object sender, EventArgs e)
         {
-            label5.Visible = true;
             if (downloadNode == "国内")
             {
-                nodeUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
-                checkUpdateUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt";
+                nodeUrl = "https://ygodiydata.github.fogmoe.top/";
+                checkUpdateUrl = "https://ghproxy.futils.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt";
             }
             else if(downloadNode == "国外")
             {
@@ -107,8 +106,8 @@ namespace ygopro_FogMoe_AutoUpdate
             }
             else
             {
-                nodeUrl = "https://archive.fastgit.org/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
-                checkUpdateUrl = "https://hk1.monika.love/scarletkc/ygopro-FogMoe-card-database/main/Version.txt";
+                nodeUrl = "https://gh2.yanqishui.work/https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://raw.iqiq.io/scarletkc/ygopro-FogMoe-card-database/main/Version.txt";
             }
             if (needUpdateCard == 1)
             {
@@ -136,7 +135,6 @@ namespace ygopro_FogMoe_AutoUpdate
             {
                 MessageBox.Show("您的本地FogMoe卡片数据版本已经是最新的了，不需要更新哦！");
             }
-            label5.Visible = false;
 
         }
 
@@ -162,11 +160,10 @@ namespace ygopro_FogMoe_AutoUpdate
 
         private void button4_Click(object sender, EventArgs e)
         {
-            label5.Visible = true;
             if (downloadNode == "国内")
             {
-                nodeUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
-                checkUpdateUrl = "https://ghproxy.fsofso.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt";
+                nodeUrl = "https://ygodiydata.github.fogmoe.top/";
+                checkUpdateUrl = "https://ghproxy.futils.com/https://github.com/scarletkc/ygopro-FogMoe-card-database/blob/main/Version.txt";
             }
             else if (downloadNode == "国外")
             {
@@ -175,8 +172,8 @@ namespace ygopro_FogMoe_AutoUpdate
             }
             else
             {
-                nodeUrl = "https://archive.fastgit.org/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
-                checkUpdateUrl = "https://hk1.monika.love/scarletkc/ygopro-FogMoe-card-database/main/Version.txt";
+                nodeUrl = "https://gh2.yanqishui.work/https://github.com/scarletkc/ygopro-FogMoe-card-database/archive/refs/heads/main.zip";
+                checkUpdateUrl = "https://raw.iqiq.io/scarletkc/ygopro-FogMoe-card-database/main/Version.txt";
             }
             if (textBox1.Text == "")
             {
@@ -216,7 +213,6 @@ namespace ygopro_FogMoe_AutoUpdate
                     needUpdateCard = 0;
                 }
             }
-            label5.Visible = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -49,11 +49,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
-            this.label1.Location = new System.Drawing.Point(531, 233);
+            this.label1.Location = new System.Drawing.Point(508, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 19);
+            this.label1.Size = new System.Drawing.Size(64, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Beta";
+            this.label1.Text = "Gamma";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
@@ -183,15 +183,13 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 42F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(260, 98);
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
+            this.label5.Location = new System.Drawing.Point(8, 171);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(312, 75);
+            this.label5.Size = new System.Drawing.Size(339, 19);
             this.label5.TabIndex = 14;
-            this.label5.Text = "请耐心等待";
-            this.label5.Visible = false;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.Text = "提示: 更新中如未响应请耐心等待或更换下载节点重试";
             // 
             // Form1
             // 
