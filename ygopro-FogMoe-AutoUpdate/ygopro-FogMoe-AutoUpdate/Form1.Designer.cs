@@ -49,11 +49,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
-            this.label1.Location = new System.Drawing.Point(508, 233);
+            this.label1.Location = new System.Drawing.Point(526, 233);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 19);
+            this.label1.Size = new System.Drawing.Size(46, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Gamma";
+            this.label1.Text = "Delta";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
@@ -214,7 +214,7 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FogMoe YGOPro服务器数据更新工具";
+            this.Text = "FogMoeYGO数据更新工具";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.ResumeLayout(false);

@@ -35,7 +35,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>98090110_p0_Kno_icon.ico</ApplicationIcon>
+    <ApplicationIcon>icon_low.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="98090110_p0_Kno_icon.ico" />
+    <Content Include="icon_low.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

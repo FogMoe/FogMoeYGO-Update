@@ -112,20 +112,20 @@ namespace ygopro_FogMoe_AutoUpdate
             if (needUpdateCard == 1)
             {
                 label2.Text = "当前状态: 更新中";
-                try
-                {
+                //try
+                //{
                     CoreClass.DownloadFile(nodeUrl, gameFolderPath);
                     CoreClass.Unzip(gameFolderPath);
                     CoreClass.DeleteFile(gameFolderPath + "\\FogMoe-Temp-YGO.zip");
-                    CoreClass.CopyFilesRecursively(gameFolderPath + "\\ygopro-FogMoe-card-database-main", gameFolderPath + "\\expansions");
+                    CoreClass.CopyFilesRecursively(gameFolderPath + "\\FogMoeYGO-Card-Database-main", gameFolderPath + "\\expansions");
                     label2.Text = "当前状态: 完成了";
                     MessageBox.Show("更新完成啦！");
-                }
+                /*}
                 catch (Exception)
                 {
                     MessageBox.Show("发生错误了: 无法更新！请更换下载节点重试或联系Kc处理喵~ ");
                     label2.Text = "当前状态: 失败了";
-                }               
+                }  */             
             }
             else if (needUpdateCard == 0)
             {
